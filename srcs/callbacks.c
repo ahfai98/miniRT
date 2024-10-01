@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 05:54:25 by tjien-ji          #+#    #+#             */
-/*   Updated: 2024/09/25 19:30:11 by jyap             ###   ########.fr       */
+/*   Updated: 2024/10/01 11:58:10 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	mouse_hook_callback(int button, int x, int y, void *param)
 
 bool	check_keycode(int keycode)
 {
-	return (keycode == XK_KP_Add || keycode == XK_KP_Subtract
+	return (keycode == XK_equal || keycode == XK_minus
 		|| keycode == XK_w || keycode == XK_a || keycode == XK_s
 		|| keycode == XK_d || keycode == XK_Up || keycode == XK_Down
-		|| keycode == XK_KP_Left || keycode == XK_KP_Right
-		|| keycode == XK_KP_Up || keycode == XK_KP_Down
+		|| keycode == XK_h || keycode == XK_k
+		|| keycode == XK_u || keycode == XK_j
 		|| keycode == XK_bracketleft || keycode == XK_bracketright);
 }
 

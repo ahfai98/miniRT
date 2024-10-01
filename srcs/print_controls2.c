@@ -26,6 +26,7 @@ void	print_sphere_controls(t_sphere *sp)
 {
 	printf("Use Mouse Scroll to set diameter of sphere\n\n");
 	printf("Currently selected : Sphere\n\n");
+	printf("---------------------------\n\n");
 	printf("Coordinates :(%.3f, %.3f, %.3f)\n\n",
 		sp->pos.x, sp->pos.y, sp->pos.z);
 	printf("Diameter : %.3f\n", sp->dia);

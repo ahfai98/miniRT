@@ -28,10 +28,10 @@ void	print_transform(void)
 {
 	printf("        Translate                     Rotate\n\n");
 	printf("╔═══════╦═══════╦═══════╗    ╔═══════╦═══════╦═══════╗\n");
-	printf("║   ↑   ║   W   ║   ↓   ║    ║   [   ║   8   ║   ]   ║\n");
+	printf("║   ↑   ║   W   ║   ↓   ║    ║   [   ║   U   ║   ]   ║\n");
 	printf("║  +z   ║   Up  ║  -z   ║    ║   z←  ║   x↑  ║   z→  ║\n");
 	printf("╠═══════╬═══════╬═══════╣    ╠═══════╬═══════╬═══════╣\n");
-	printf("║   A   ║   S   ║   D   ║    ║   4   ║   2   ║   6   ║\n");
+	printf("║   A   ║   S   ║   D   ║    ║   H   ║   J   ║   K   ║\n");
 	printf("║  Left ║  Down ║ Right ║    ║   y←  ║   x↓  ║   y→  ║\n");
 	printf("╚═══════╩═══════╩═══════╝    ╚═══════╩═══════╩═══════╝\n\n");
 }
@@ -48,7 +48,7 @@ void	print_signs(void)
 void	print_light_controls(t_light l)
 {
 	print_mode();
-	print_transform();
+	print_transform_light();
 	printf("Set Light Brightness Ratio\n\n");
 	print_signs();
 	printf("Currently selected : Light\n");

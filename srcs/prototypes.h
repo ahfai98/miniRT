@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   prototypes.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjien-ji <tjien-ji@42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:09:38 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/25 22:13:50 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:49:51 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # include <errno.h>
 # include <stdbool.h>
 
-# define WIN_W 500
-# define WIN_H 500
+# define WIN_W 800
+# define WIN_H 800
 
 # define LEFT_MOUSE_BUTTON 1
 # define MOUSE_SCROLL_UP 4
@@ -139,5 +139,6 @@ void			print_signs(void);
 void			print_light_controls(t_light l);
 void			print_cam_controls(t_camera c);
 void			print_controls(t_mlxs *mlxs);
+void			print_transform_light(void);
 
 #endif

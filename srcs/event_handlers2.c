@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_handlers2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjien-ji <tjien-ji@42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 06:04:31 by tjien-ji          #+#    #+#             */
-/*   Updated: 2024/09/26 00:14:32 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2024/10/01 11:58:10 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 void	kb_event_handler_transform_cam(int keycode, t_mlxs *mlxs)
 {
-	if (keycode == XK_KP_Add || keycode == XK_KP_Subtract)
+	if (keycode == XK_equal || keycode == XK_minus)
 		kb_event_handler_zoom_cam(keycode, mlxs);
 	else if (keycode == XK_w || keycode == XK_a || keycode == XK_s
 		|| keycode == XK_d || keycode == XK_Up || keycode == XK_Down)
 		kb_event_handler_translate_cam(keycode, mlxs);
-	else if (keycode == XK_KP_Left || keycode == XK_KP_Right
-		|| keycode == XK_KP_Up || keycode == XK_KP_Down
+	else if (keycode == XK_h || keycode == XK_k
+		|| keycode == XK_u || keycode == XK_j
 		|| keycode == XK_bracketleft || keycode == XK_bracketright)
 		kb_event_handler_rotate_cam(keycode, mlxs);
 	else
@@ -34,13 +34,13 @@ void	kb_event_handler_transform_cam(int keycode, t_mlxs *mlxs)
 
 void	kb_event_handler_rotate_cam(int keycode, t_mlxs *mlxs)
 {
-	if (keycode == XK_KP_Left)
+	if (keycode == XK_h)
 		rotate_cam_y(&mlxs->sc->cam, -10);
-	else if (keycode == XK_KP_Right)
+	else if (keycode == XK_k)
 		rotate_cam_y(&mlxs->sc->cam, 10);
-	else if (keycode == XK_KP_Up)
+	else if (keycode == XK_u)
 		rotate_cam_x(&mlxs->sc->cam, 10);
-	else if (keycode == XK_KP_Down)
+	else if (keycode == XK_j)
 		rotate_cam_x(&mlxs->sc->cam, -10);
 	else if (keycode == XK_bracketleft)
 		rotate_cam_z(&mlxs->sc->cam, 10);
@@ -73,9 +73,9 @@ void	kb_event_handler_zoom_cam(int keycode, t_mlxs *mlxs)
 	double	diff;
 
 	diff = 0;
-	if (keycode == XK_KP_Add && mlxs->sc->cam.fov_deg < 179)
+	if (keycode == XK_equal && mlxs->sc->cam.fov_deg < 179)
 		diff = 1;
-	else if (keycode == XK_KP_Subtract && mlxs->sc->cam.fov_deg > 2)
+	else if (keycode == XK_minus && mlxs->sc->cam.fov_deg > 2)
 		diff = -1;
 	mlxs->sc->cam.fov_deg += diff;
 }

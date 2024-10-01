@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 18:40:26 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 00:51:18 by jyap             ###   ########.fr       */
+/*   Updated: 2024/10/01 12:44:50 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,16 +94,18 @@ t_vect	parse_vector_sub(char **arr, char **split, char *line, t_mlxs *mlxs)
 	int		ret;
 	t_vect	vector;
 
-	ret = is_float(split[0]) + is_float(split[1]) + is_float(split[2]);
-	if (ret == 3)
+	vector = vect(0, 0, 0);
+	ret = false;
+	if (is_float(split[0]) && is_float(split[1]) && is_float(split[2]))
+		ret = true;
+	if (ret)
 	{
 		vector.x = (double)str_to_float(split[0]);
 		vector.y = (double)str_to_float(split[1]);
 		vector.z = (double)str_to_float(split[2]);
-		ret += is_range(vector.x) + is_range(vector.y) + is_range(vector.x);
 	}
 	free_str_arr(split);
-	if (ret != 6 || vect_is_equal(vect(0, 0, 0), vector))
+	if (!ret || fabs(distance(vector, vect(0, 0, 0)) - 1) > 1e-4)
 	{
 		free_str_arr(arr);
 		print_err_exit("Invalid info for normalized vector.\n", &mlxs, line);

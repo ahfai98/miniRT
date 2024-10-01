@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:07:00 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/25 20:38:29 by jyap             ###   ########.fr       */
+/*   Updated: 2024/10/01 11:54:08 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,7 @@ int	main(int ac, char **av)
 
 	(void) av;
 	if (ac != 2)
-	{
-		print_err("Invalid Arguments.\n", NULL);
-		print_err_exit("./miniRT <file.rt>\n", NULL, NULL);
-	}
+		print_err_exit("Invalid Arguments.\n", NULL, NULL);
 	mlxs = ft_calloc(sizeof(t_mlxs), 1);
 	mlxs->last_selected_obj = NULL;
 	if (mlxs == NULL)

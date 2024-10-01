@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_handlers3.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tjien-ji <tjien-ji@42kl.edu.my>            +#+  +:+       +#+        */
+/*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 09:26:36 by tjien-ji          #+#    #+#             */
-/*   Updated: 2024/09/26 00:15:02 by tjien-ji         ###   ########.fr       */
+/*   Updated: 2024/10/01 11:47:05 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	kb_event_handler_adjust_light(int keycode, t_mlxs *mlxs)
 {
-	if (keycode == XK_KP_Add || keycode == XK_KP_Subtract)
+	if (keycode == XK_equal || keycode == XK_minus)
 		kb_event_handler_adjust_light_ratio(keycode, mlxs);
 	else if (keycode == XK_w || keycode == XK_a || keycode == XK_s
 		|| keycode == XK_d || keycode == XK_Up || keycode == XK_Down)
@@ -32,9 +32,9 @@ void	kb_event_handler_adjust_light_ratio(int keycode, t_mlxs *mlxs)
 	double	diff;
 
 	diff = 0;
-	if (keycode == XK_KP_Add)
+	if (keycode == XK_equal)
 		diff = 0.1;
-	else if (keycode == XK_KP_Subtract)
+	else if (keycode == XK_minus)
 		diff = -0.1;
 	mlxs->sc->light.ratio += diff;
 	if (mlxs->sc->light.ratio > 1)
